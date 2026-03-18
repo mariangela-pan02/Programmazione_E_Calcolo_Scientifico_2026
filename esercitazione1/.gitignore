@@ -1,0 +1,4 @@
+build/
+*.o
+argc_argv
+media_temperature

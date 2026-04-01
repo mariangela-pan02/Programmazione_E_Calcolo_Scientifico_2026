@@ -1,0 +1,3 @@
+build/
+rational_test
+*.o

@@ -1,0 +1,15 @@
+Osservazioni
+
+
+Confrontando i tempi di esecuzione su vettori piccoli (dimensioni inferiori a 100),si osserva che gli algoritmi quadratici, in particolare insertion_sort, possono risultare più veloci di quick_sort e merge_sort per vettori molto piccoli.
+
+Questo accade probabilmente perché gli algoritmi logaritmici introducono un overhead dovuto a operazioni aggiuntive che, su pochi elementi, possono costare più del semplice algoritmo quadratico.
+
+Dalle prove effettuate, insertion_sort risulta generalmente il più veloce tra gli algoritmi quadratici per vettori piccoli (sotto i 64 elementi).
+
+All'aumentare della dimensione, merge_sort e quick_sort diventano, invece, nettamente più efficienti rispetto a bubble_sort, selection_sort e insertion_sort.
+Le prestazioni restano competitive fino a circa 64-128 elementi, mentre per dimensioni maggiori le differenze diventano evidenti.
+
+Per questo motivo è stata implementata una versione ibrida di quick_sort chiamata quick_sort_hybrid, che utilizza insertion_sort quando la dimensione del sottovettore scende sotto i 64 elementi.
+
+Si osserva inoltre che std::sort, per vettori di dimensione medio-grande, risulta a volte (ma non sempre) l’algoritmo più veloce. Diversi test hanno prodotto risultati differenti, comunque con ordini di grandezza paragonabili tra merge_sort, quick_sort, quick_sort_hybrid e std::sort.
